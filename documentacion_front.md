@@ -7,7 +7,7 @@ Color de Texto Secundario: #7F8C8D (Gris medio)
 Color de Botón Principal: #8E44AD (Morado)
 Color de Botón Secundario: #3498DB (Azul Claro)
 
-## para el usuo de video en vivo
+## Para el usuo de video en vivo
 
 ### instalacion de librerias
 
@@ -37,3 +37,28 @@ sudo systemctl status nginx
 
 para usar la camara del sistema:
 ffmpeg -f v4l2 -i /dev/video0 -c:v libx264 -f flv rtmp://localhost:1935/live/stream
+
+## Ejecución del app
+
+Creación de un ambiente virtualizado
+
+``` shell
+python -m venv env
+
+source env/bin/activate
+```
+
+Importación de librerías
+
+``` shell
+pip install -r requirements.txt
+
+```
+
+Ejecutar el app:
+
+Se debe estar en el nivel de /src
+
+```shell
+python app.py
+```
