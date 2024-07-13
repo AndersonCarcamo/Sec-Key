@@ -30,3 +30,10 @@ face_recognition
 pymysql
 
 ```
+## Librerías para Open_cv
+
+``` shell
+pip install opencv-contrib-python
+pip install imutils		
+pip install face_recognition
+```
