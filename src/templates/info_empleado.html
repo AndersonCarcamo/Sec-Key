@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_home">
+    <div class="header_home">
+        <h1>Información de Empleado</h1>
+    </div>
+    <div class="main_home">
+        <div class="photo">
+            {% if empleado.foto %}
+            <img src="{{ url_for('static', filename=empleado.foto) }}" alt="{{ empleado.nombre }} {{ empleado.apellido }}">
+            {% else %}
+            <div class="no-photo">Sin foto</div>
+            {% endif %}
+        </div>
+        <div class="user-info">
+            <p><strong>Nombre:</strong> {{ empleado.nombre }}</p>
+            <p><strong>Apellido:</strong> {{ empleado.apellido }}</p>
+            <p><strong>DNI:</strong> {{ empleado.dni }}</p>
+            <p><strong>Email:</strong> {{ empleado.email }}</p>
+            <p><strong>Cargo:</strong> {{ empleado.cargo }}</p>
+        </div>
+        <div class="buttons mt-3">
+            <button class="btn btn-primary mb-2" onclick="location.href='{{ url_for('editar_empleado', codigo_empleado=empleado.codigo_empleado) }}'">Editar datos</button>
+            <form method="POST" action="{{ url_for('eliminar_empleado', codigo_empleado=empleado.codigo_empleado) }}">
+                <button class="btn btn-danger" type="submit">Eliminar empleado</button>
+            </form>
+        </div>
+    </div>
+    {% include 'TabNavigator2.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_home">
+    <div class="header_home">
+        <h1>Información de Visitante</h1>
+    </div>
+    <div class="main_home">
+        <div class="photo">
+            {% if visitor['foto'] %}
+            <img src="{{ url_for('static', filename=visitor['foto']) }}" alt="{{ visitor['nombre'] }} {{ visitor['apellido'] }}">
+            {% else %}
+            <div class="no-photo">Sin foto</div>
+            {% endif %}
+        </div>
+        <p><strong>Nombre:</strong> {{ visitor['nombre'] }}</p>
+        <p><strong>Apellido:</strong> {{ visitor['apellido'] }}</p>
+        <p><strong>Edad:</strong> {{ visitor['edad'] }}</p>
+        <button class="btn btn-primary" onclick="location.href='{{ url_for('editar_invitado', dni=visitor['dni']) }}'">Editar datos</button>
+        <form method="POST" action="{{ url_for('eliminar_invitado', dni=visitor['dni']) }}" style="display:inline;">
+            <button class="btn btn-danger" type="submit">Eliminar invitado</button>
+        </form>
+    </div>
+    {% include 'TabNavigator.html' %}
+</div>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="login-container">
+    <h1>Secure Place</h1>
+    <form method="POST" action="{{ url_for('login') }}">
+        <input type="text" placeholder="Correo" name="correo" required>
+        <input type="password" placeholder="Contraseña" name="password" required>
+        <button type="submit">Iniciar sesión</button>
+        <a href="{{ url_for('register') }}"><button type="button">Registrarse</button></a>
+    </form>
+    <div class="icon">
+        <a href="{{ url_for('instrucciones') }}">
+            <i class="fas fa-lightbulb fa-3x"></i>
+        </a>
+        <p>Pasos</p>
+    </div>
+</div>
+{% endblock %}

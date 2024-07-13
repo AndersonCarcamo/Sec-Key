@@ -1,0 +1,51 @@
+.instructions-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: left;
+}
+
+.instructions-container h1 {
+    color: #4A90E2;
+    margin-bottom: 20px;
+}
+
+.instructions-container ol {
+    padding-left: 20px;
+}
+
+.instructions-container ol li {
+    margin-bottom: 10px;
+}
+
+.instructions-container form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.instructions-container button[type="submit"] {
+    background-color: #8E44AD;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .instructions-container {
+        padding: 20px;
+        margin: 50px auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .instructions-container {
+        padding: 10px;
+        margin: 20px auto;
+    }
+}

@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_home">
+    <div class="header_home">
+        <h1>Bienvenido {{ user['nombre'] }}</h1>
+        <form method="GET" action="{{ url_for('logout') }}">
+            <button type="submit" class="btn btn-danger">Logout</button>
+        </form>
+    </div>
+    <div class="main_home">
+        <button class="video-button btn btn-success" onclick="location.href='{{ url_for('live') }}'">Video en vivo</button>
+        <h2>Usuarios permitidos</h2>
+        <div class="photo-collection">
+            <div class="photo">
+                {% if user['foto'] %}
+                <img src="{{ url_for('static', filename=user['foto']) }}" alt="{{ user['nombre'] }} {{ user['apellido'] }}">
+                {% else %}
+                <div class="no-photo">Sin foto</div>
+                {% endif %}
+                <p>{{ user['nombre'] }} {{ user['apellido'] }}<br><span class="role">Cliente</span></p>
+            </div>
+            {% for visitor in visitors %}
+            <div class="photo" onclick="location.href='{{ url_for('info_invitado', dni=visitor['dni']) }}'">
+                {% if visitor['foto'] %}
+                <img src="{{ url_for('static', filename=visitor['foto']) }}" alt="{{ visitor['nombre'] }} {{ visitor['apellido'] }}">
+                {% else %}
+                <div class="no-photo">Sin foto</div>
+                {% endif %}
+                <p>{{ visitor['nombre'] }} {{ visitor['apellido'] }}<br><span class="role">Invitado</span></p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="photo add-guest">
+            <button onclick="location.href='{{ url_for('agregar_invitado') }}'" class="btn btn-primary">Agregar invitado</button>
+        </div>
+    </div>
+    {% include 'TabNavigator.html' %}
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const doorButton = document.getElementById('doorButton');
+        let doorState = 1; // 1 is closed, 0 is open
+
+        doorButton.addEventListener('click', () => {
+            doorState = doorState === 1 ? 0 : 1;
+            fetch('http://localhost:5004/send', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ command: doorState.toString() })
+            }).then(response => {
+                if (response.ok) {
+                    if (doorState === 1) {
+                        doorButton.innerHTML = '<i class="fas fa-lock"></i>';
+                    } else {
+                        doorButton.innerHTML = '<i class="fas fa-unlock"></i>';
+                    }
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

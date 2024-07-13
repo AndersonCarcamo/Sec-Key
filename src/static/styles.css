@@ -1,0 +1,308 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    margin: 0;
+}
+
+.login-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    margin: 10px 0;
+    padding: 10px;
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button[type="button"] {
+    background: #2575fc;
+}
+
+.icon {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.icon p {
+    margin: 10px 0 0;
+    color: #fff;
+}
+
+
+/* Estilos para el contenedor de registro */
+.register-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+}
+
+.register-container h1 {
+    margin-bottom: 20px;
+}
+
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container input {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.register-container button {
+    margin: 10px 0;
+    padding: 10px;
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-container button[type="button"] {
+    background: #2575fc;
+}
+
+.register-container label {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.register-container label input {
+    margin-right: 10px;
+}
+
+.instructions-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 300px;
+    margin: 20px auto;
+}
+
+.instructions-container h1 {
+    margin-bottom: 20px;
+}
+
+.instructions-container ol {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.instructions-container button {
+    padding: 10px 20px;
+    background: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos para el contenedor de main */
+
+.container_home {
+    background: linear-gradient(to right, #2e204e, #3b2053);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    color: white;
+}
+
+.header_home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.header_home h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.header_home .settings-button {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.main_home {
+    height: 80%;
+    padding: 20px;
+    text-align: center;
+}
+
+.main_home h2 {
+    margin-bottom: 20px;
+}
+
+.main_home .video-button {
+    background-color: #6a11cb;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.photo-collection {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.photo-collection .photo {
+    width: 120px;
+    height: 150px;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    color: black;
+    text-align: center;
+}
+
+.photo-collection .photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-collection .photo p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    margin: 0;
+    padding: 5px;
+    text-align: center;
+}
+
+.add-guest {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.add-guest button {
+    background-color: #2575fc;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.nav-buttons_home {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+    background-color: #4e54c8;
+}
+
+.nav-buttons_home button {
+    background-color: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* vista de configuracion */
+
+.user-info-main p {
+    margin: 10px 0;
+}
+
+.user-info-edit-button {
+    background-color: #6a11cb;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    margin: 10px 0;
+}
+
+.user-info-delete-button {
+    background-color: #fc2575;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+}
+
+/* vista de add invitado */
+
+.cancel-button {
+    background-color: #fc2575;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.save-button {
+    background-color: #6a11cb;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}

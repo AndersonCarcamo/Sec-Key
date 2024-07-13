@@ -1,0 +1,229 @@
+/* static/css/main.css */
+
+/* Home Container */
+.container_home {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 70%;
+    margin: 50px auto;
+    text-align: left;
+}
+
+.header_home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header_home h1 {
+    color: #4A90E2;
+}
+
+.header_home .settings-button img {
+    width: 30px;
+    cursor: pointer;
+}
+
+.header_home form {
+    margin: 0;
+}
+
+.header_home button[type="submit"] {
+    background-color: #8E44AD;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.main_home .video-button {
+    display: block;
+    background-color: #50E3C2;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.photo-collection {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px; /* Add space for scrollbar */
+}
+
+.photo-collection::-webkit-scrollbar {
+    width: 10px;
+}
+
+.photo-collection::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.photo-collection::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+.photo-collection::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.photo {
+    text-align: center;
+    width: 120px;
+    margin: 0 auto 20px;
+}
+
+.photo img,
+.photo .no-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    color: #7f8c8d;
+    font-size: 12px;
+}
+
+.photo p {
+    margin-top: 10px;
+    color: #333333;
+}
+
+.photo .role {
+    color: #7F8C8D;
+}
+
+.photo.add-guest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.photo.add-guest button {
+    background-color: #3498DB;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.user-info {
+    text-align: left;
+    margin-top: 20px;
+}
+
+.user-info p {
+    margin: 5px 0;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav-buttons_home {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    background-color: #f8f9fa; /* Light gray background */
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.nav-buttons_home button {
+    background-color: #ffffff; /* White background */
+    border: 1px solid #ddd; /* Light gray border */
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333; /* Dark gray icon color */
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav-buttons_home button:hover {
+    background-color: #e9ecef; /* Slightly darker gray on hover */
+}
+
+.contact-group {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-group h2 {
+    background-color: #d9a3a3;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+}
+
+.contact-group button {
+    margin: 10px;
+    width: 100px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container_home {
+        padding: 20px;
+        margin: 50px auto;
+    }
+
+    .photo-collection {
+        justify-content: center;
+    }
+
+    .header_home h1 {
+        font-size: 24px;
+    }
+
+    .header_home .settings-button img {
+        width: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container_home {
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .photo img,
+    .photo .no-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header_home h1 {
+        font-size: 20px;
+    }
+
+    .header_home .settings-button img {
+        width: 20px;
+    }
+}

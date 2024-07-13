@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <h1>Verificación de Administrador</h1>
+    <form method="POST" action="{{ url_for('verify_admin') }}">
+        <input type="text" placeholder="Código de Administrador" name="admin_code" required>
+        <button type="submit">Verificar</button>
+    </form>
+</div>
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_home">
+    <div class="header_home">
+        <h1>Tu información</h1>
+    </div>
+    <div class="main_home user-info-main text-center">
+        <div class="photo">
+            {% if user['foto'] %}
+            <img src="{{ url_for('static', filename=user['foto']) }}" alt="{{ user['nombre'] }} {{ user['apellido'] }}">
+            {% else %}
+            <div class="no-photo">Sin foto</div>
+            {% endif %}
+        </div>
+        <div class="user-info">
+            <p><strong>Nombre:</strong> {{ user['nombre'] }}</p>
+            <p><strong>Apellido:</strong> {{ user['apellido'] }}</p>
+            <p><strong>DNI:</strong> {{ user['dni'] }}</p>
+            <p><strong>Email:</strong> {{ user['gmail'] }}</p>
+            <p><strong>Código:</strong> {{ user['reserva'] }}</p>
+            <p><strong>Puesto:</strong> Jefa de seguridad</p>
+        </div>
+        <div class="buttons mt-3">
+            <button class="btn btn-primary mb-2" onclick="location.href='{{ url_for('editar_perfil') }}'">Editar datos</button>
+            <form method="POST" action="{{ url_for('logout') }}">
+                <button class="btn btn-danger" type="submit">Cerrar cuenta</button>
+            </form>
+        </div>
+    </div>
+    {% include 'TabNavigator.html' %}
+</div>
+{% endblock %}

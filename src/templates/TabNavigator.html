@@ -1,0 +1,17 @@
+<div class="nav-buttons_home d-flex justify-content-around mt-4">
+    <button onclick="location.href='{{ url_for('main') }}'" class="btn btn-secondary">
+        <i class="fas fa-home"></i>
+    </button>
+    <button class="btn btn-secondary">
+        <i class="fas fa-video"></i>
+    </button>
+    <button onclick="location.href='{{ url_for('contacts') }}'" class="btn btn-secondary">
+        <i class="fas fa-comments"></i>
+    </button>
+    <button onclick="location.href='{{ url_for('usuario') }}'" class="btn btn-secondary">
+        <i class="fas fa-user"></i>
+    </button>
+    <button id="doorButton" class="btn btn-secondary">
+        <i class="fas fa-lock"></i>
+    </button>
+</div>

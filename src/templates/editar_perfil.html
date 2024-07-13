@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_home">
+    <div class="header_home">
+        <h1>Editar Perfil</h1>
+    </div>
+    <div class="main_home">
+        <form method="POST" action="{{ url_for('editar_perfil') }}" enctype="multipart/form-data">
+            <div class="photo">
+                {% if user['foto'] %}
+                <img src="{{ url_for('static', filename=user['foto']) }}" alt="{{ user['nombre'] }} {{ user['apellido'] }}">
+                {% else %}
+                <div class="no-photo">Sin foto</div>
+                {% endif %}
+            </div>
+            <input type="file" name="foto">
+            <input type="text" placeholder="Nombre" name="nombre" value="{{ user['nombre'] }}" required>
+            <input type="text" placeholder="Apellido" name="apellido" value="{{ user['apellido'] }}" required>
+            <input type="email" placeholder="Email" name="gmail" value="{{ user['gmail'] }}" required>
+            <button class="btn btn-secondary" type="button" onclick="location.href='{{ url_for('usuario') }}'">Cancelar</button>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </form>
+    </div>
+    {% include 'TabNavigator.html' %}
+</div>
+{% endblock %}

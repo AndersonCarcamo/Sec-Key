@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_home">
+    <div class="header_home">
+        <h1>Agregar invitado</h1>
+    </div>
+    <div class="main_home">
+        <form method="POST" action="{{ url_for('agregar_invitado') }}" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Apellido" name="apellido" required>
+            </div>
+            <div class="form-group">
+                <input type="number" class="form-control" placeholder="Edad" name="edad" required>
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="DNI" name="dni" required>
+            </div>
+            <div class="form-group">
+                <input type="file" class="form-control" name="foto" accept="image/*" required>
+            </div>
+            <button class="btn btn-secondary" type="button" onclick="location.href='{{ url_for('main') }}'">No guardar</button>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </form>
+    </div>
+    {% include 'TabNavigator.html' %}
+</div>
+{% endblock %}

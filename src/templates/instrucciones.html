@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/instructions.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="instructions-container">
+    <h1>Instrucciones</h1>
+    <ol>
+        <li>La aplicación solicita la fotografía del cliente para que la cámara le permita el ingreso de forma automática a la habitación.</li>
+        <li>El cliente dentro de la aplicación puede observar fuera de la habitación con (video en vivo).</li>
+        <li>Usted podrá grabar por (video en vivo).</li>
+        <li>Puede agregar fotos de otros clientes que lo acompañen en la habitación.</li>
+        <li>Podrá cambiar sus datos excepto el número de reserva, se puede solicitar el cambio en caso sea necesario en atención al cliente.</li>
+        <li>En configuraciones podrá activar notificaciones de aviso de ingreso a la habitación, entre otros.</li>
+    </ol>
+    <form method="GET" action="{{ url_for('index') }}">
+        <button type="submit" class="btn btn-primary">Inicio</button>
+    </form>
+</div>
+{% endblock %}

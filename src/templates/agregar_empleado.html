@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block additional_styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="container_home">
+    <div class="header_home">
+        <h1>Agregar empleado</h1>
+    </div>
+    <div class="main_home">
+        <form method="POST" action="{{ url_for('agregar_empleado') }}" enctype="multipart/form-data">
+            <input type="text" placeholder="Código Empleado" name="codigo_empleado" required>
+            <input type="text" placeholder="Nombre" name="nombre" required>
+            <input type="text" placeholder="Apellido" name="apellido" required>
+            <input type="text" placeholder="DNI" name="dni" required>
+            <input type="email" placeholder="Email" name="email" required>
+            <input type="text" placeholder="Cargo" name="cargo" required>
+            <input type="file" name="foto">
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            <button class="btn btn-secondary" type="button" onclick="location.href='{{ url_for('admin') }}'">Cancelar</button>
+        </form>
+    </div>
+    {% include 'TabNavigator2.html' %}
+</div>
+{% endblock %}

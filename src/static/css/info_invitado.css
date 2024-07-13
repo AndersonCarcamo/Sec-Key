@@ -1,0 +1,60 @@
+/* static/css/info_invitado.css */
+
+/* Container */
+.container_home {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 70%;
+    margin: 50px auto;
+    text-align: left;
+}
+
+.header_home {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header_home h1 {
+    color: #4A90E2;
+}
+
+.main_home p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.main_home p strong {
+    color: #333333;
+}
+
+.main_home .btn {
+    margin: 10px 5px;
+}
+
+.main_home .btn-primary {
+    background-color: #3498DB;
+    border-color: #3498DB;
+}
+
+.main_home .btn-danger {
+    background-color: #E74C3C;
+    border-color: #E74C3C;
+}
+
+/* Tab Navigator */
+.nav-buttons_home {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.nav-buttons_home button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
